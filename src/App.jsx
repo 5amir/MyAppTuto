@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
 import {
-  Link,
   NavLink,
   Outlet,
   RouterProvider,
@@ -9,6 +8,7 @@ import {
 } from "react-router-dom";
 import { Single } from "./components/forms/single";
 import { Blog } from "./components/forms/blog";
+import { Geolocation } from "./components/forms/geolocation";
 import "./components/css/loader.css";
 
 /*
@@ -87,6 +87,10 @@ const router = createBrowserRouter([
         path: "contact",
         element: <div>contact</div>,
       },
+      {
+        path: "Position",
+        element: <Geolocation />,
+      },
     ],
   },
 ]);
@@ -109,6 +113,9 @@ function Root() {
           <NavLink to="/article" className="col-2">
             article
           </NavLink>
+          <NavLink to="/position" className="col-2">
+            Ma position
+          </NavLink>
         </nav>
       </header>
       <div>
@@ -116,7 +123,9 @@ function Root() {
         <Outlet />
       </div>
       <footer>
-        <strong>Nous ne bougeons pas les gars</strong>
+        <strong>
+          <h1>FOOTER</h1>
+        </strong>
       </footer>
     </div>
   );
