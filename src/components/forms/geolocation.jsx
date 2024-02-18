@@ -33,7 +33,7 @@ export function Geolocation() {
           <p>Longitude: {location.longitude}</p>
         </div>
       ) : (
-        <p>Loading location...</p>
+        <p>localisation non disponible...</p>
       )}
     </div>
   );

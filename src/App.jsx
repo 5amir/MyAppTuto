@@ -78,7 +78,7 @@ const router = createBrowserRouter([
               fetch("https://jsonplaceholder.typicode.com/posts?_limit=10"),
           },
           {
-            path: ":id",
+            path: ":id/:jaime",
             element: <Single />,
           },
         ],
@@ -97,6 +97,9 @@ const router = createBrowserRouter([
 
 function Root() {
   const { state } = useNavigation();
+  let art = 6;
+  let jaime = 20;
+  let link = "/article/" + art.toString() + "/" + jaime.toString();
   return (
     <div>
       <header>
@@ -110,7 +113,7 @@ function Root() {
           <NavLink to="/contact" className="col-2">
             contact
           </NavLink>
-          <NavLink to="/article" className="col-2">
+          <NavLink to={link} className="col-2">
             article
           </NavLink>
           <NavLink to="/position" className="col-2">
